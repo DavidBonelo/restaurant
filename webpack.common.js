@@ -1,6 +1,6 @@
 import { dirname, resolve } from "path";
 import { fileURLToPath } from "url";
-// const HtmlWebpackPlugin = require("html-webpack-plugin");
+import HtmlWebpackPlugin from "html-webpack-plugin";
 
 export default {
   target: "web",
@@ -8,7 +8,7 @@ export default {
   output: {
     filename: "main.js",
     path: resolve(dirname(fileURLToPath(import.meta.url)), "dist"),
-    // clean: true,
+    clean: true,
   },
   module: {
     rules: [
@@ -27,10 +27,10 @@ export default {
     ],
   },
   plugins: [
-    // new HtmlWebpackPlugin({
-    //   filename: "index.html",
-    //   template: "./src/index.html",
-    // }),
+    new HtmlWebpackPlugin({
+      filename: "index.html",
+      template: "./src/index.html",
+    }),
   ],
   optimization: {
     // this is needed when using multiple entry points
