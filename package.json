@@ -17,7 +17,8 @@
   "scripts": {
     "watch": "webpack --watch",
     "dev": "webpack serve --config webpack.dev.js",
-    "build": "webpack --config webpack.prod.js"
+    "build": "webpack --config webpack.prod.js",
+    "publishGHPage": "git subtree push --prefix dist origin gh-pages"
   },
   "module": "index.js",
   "type": "module"
